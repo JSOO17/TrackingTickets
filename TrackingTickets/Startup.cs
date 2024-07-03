@@ -26,6 +26,7 @@ namespace TrackingTickets
             var config = builder.GetContext().Configuration;
             builder.Services.Configure<EventHubConfig>(config.GetSection("EventHub"));
             builder.Services.Configure<CosmosDbConfig>(config.GetSection("CosmosDb"));
+
             builder.Services.AddSingleton<MongoDataAccess>();
             builder.Services.AddTransient<ITrackingRepository, TrackingRepository>();
         }
